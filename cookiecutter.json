@@ -1,0 +1,8 @@
+{
+    "full_name": "Serafeim Papastefanos",
+    "email": "email@gmail.com",
+    "project_name": "cutter",
+    "_copy_without_render": [
+        "*.html"
+    ]
+}

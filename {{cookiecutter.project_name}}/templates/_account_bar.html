@@ -1,0 +1,7 @@
+<ul class="nav navbar-nav navbar-right">
+    {% if user.is_authenticated %}
+         <li>
+            <a  href="{% url 'auth_logout' %}">{{ user.get_full_name }} ({{ user.username }})  |  Αποσύνδεση</a>
+        </li>
+    {% endif %}
+</ul>

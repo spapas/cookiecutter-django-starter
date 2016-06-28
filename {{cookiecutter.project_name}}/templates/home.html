@@ -1,0 +1,91 @@
+{% extends "site_base.html" %}
+{% load core_tags %}
+{% load static %}
+{% block extra_style %}
+<style>
+    .business-header {
+        height: 280px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        background: #1e5799; /* Old browsers */
+        background: -moz-linear-gradient(top,  #4285f4 0%, #7db9e8 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4285f4), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #4285f4 0%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #4285f4 0%,#7db9e8 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #4285f4 0%,#7db9e8 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #4285f4 0%,#7db9e8 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4285f4', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+        color: #eaeaea;
+        text-shadow: 4px 4px #1e5799;
+    }
+
+    .business-header h1, .business-header h3  {
+        font-family: 'Open Sans Condensed', 'Helvetica Neue', Helvetica,Arial,sans-serif;
+    }
+
+    .navbar {
+        margin-bottom: 0px;
+    }
+
+</style>
+{% endblock %}
+{% block head_title %}Καλώς ήρθατε{% endblock %}
+{% block body_class %}home{% endblock %}
+
+
+{% block body_base %}
+<header class="business-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="tagline"></h1>
+                <h3>subtitle</h3>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    {% include "_messages.html" %}
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Πληροφορίες</h2>
+            <br />
+            <h3>
+        </div>
+        <div class="col-sm-4">
+            <h2>Επιλογές</h2>
+            {% if user.is_authenticated %}
+                <h4>Καλώς ήρθατε, {{ user }}</h4>
+
+
+            {% else %}
+                <a class='btn btn-primary' href='{% url "auth_login" %}'>Σύνδεση</a>
+            {% endif %}
+
+
+            <h4>Επικοινωνία</h4>
+            
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script src='{% static "jquery.fittext.min.js" %}'></script>
+<script>
+$(function() {
+    $('.business-header h1').fitText(1.6, { minFontSize: '20px'});
+    $('.business-header h3').fitText(2.7);
+});
+</script>
+
+{% endblock %}
+
+
+
