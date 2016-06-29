@@ -2,6 +2,8 @@
     "full_name": "Serafeim Papastefanos",
     "email": "email@gmail.com",
     "project_name": "cutter",
+    "ldap_server": "ldap://login1.company.gr",
+    "ldap_user_dn": "ou=People,dc=company,dc=gr",
     "_copy_without_render": [
         "*.html"
     ]

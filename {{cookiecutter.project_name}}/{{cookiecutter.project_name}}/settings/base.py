@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    
+
     'compressor',
     'django_tables2',
     'django_filters',
@@ -131,10 +131,11 @@ CSRF_COOKIE_HTTPONLY = True
 
 ADMINS = MANAGERS = [('{{cookiecutter.full_name}}', '{{cookiecutter.email}}'), ]
 
+# Default for django-filter
 FILTERS_HELP_TEXT_EXCLUDE = True
 FILTERS_HELP_TEXT_FILTER = False
 
-# EMAIL
+# EMAIL cfg
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.hcg.gr'
 MAIL_PORT = 587
@@ -143,3 +144,9 @@ SERVER_EMAIL = 'noreply@hcg.gr'
 EMAIL_HOST_PASSWORD = '' # Configure me in local.py
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'noreply@hcg.gr'
+
+from .ldap_conf import *
+AUTHENTICATION_BACKENDS = (
+    'django_auth_ldap.backend.LDAPBackend',
+    '{{cookiecutter.project_name}}.core.auth.NoLoginModelBackend',
+)
