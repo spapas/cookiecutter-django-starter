@@ -97,10 +97,10 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_ROOT = '/home/serafeim/nautolog/static'
-STATIC_URL = '/static_nautolog/'
-MEDIA_URL = '/media_nautolog/'
-MEDIA_ROOT = '/home/serafeim/nautolog/media'
+STATIC_ROOT = '/home/serafeim/{{cookiecutter.project_name}}/static'
+STATIC_URL = '/static_{{cookiecutter.project_name}}/'
+MEDIA_URL = '/media_{{cookiecutter.project_name}}/'
+MEDIA_ROOT = '/home/serafeim/{{cookiecutter.project_name}}/media'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -114,7 +114,7 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
-        'KEY_PREFIX': 'nautolog',
+        'KEY_PREFIX': '{{cookiecutter.project_name}}',
     }
 }
 CACHE_MIDDLEWARE_KEY_PREFIX = '{{cookiecutter.project_name}}'
