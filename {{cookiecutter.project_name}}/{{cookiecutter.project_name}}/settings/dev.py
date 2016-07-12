@@ -27,6 +27,7 @@ AUTHENTICATION_BACKENDS += (
 )
 
 CSRF_COOKIE_SECURE = False # Override CSRF to work also with http
+SESSION_COOKIE_SECURE = False # Override session to work also with http
 
 try:
     from .local import *
