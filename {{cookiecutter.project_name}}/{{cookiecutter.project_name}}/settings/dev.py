@@ -22,6 +22,8 @@ TEMPLATES[0]['OPTIONS']['loaders'] = (
     'django.template.loaders.app_directories.Loader',
 )
 
+CSRF_COOKIE_SECURE = False # Override CSRF to work also with http
+
 try:
     from .local import *
 except ImportError:

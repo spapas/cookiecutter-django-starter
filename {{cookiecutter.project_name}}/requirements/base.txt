@@ -9,3 +9,4 @@ django-reversion==2.0.4
 django-tables2==1.2.3
 django-widget-tweaks==1.4.1
 python-ldap==2.4.25
+six==1.10.0

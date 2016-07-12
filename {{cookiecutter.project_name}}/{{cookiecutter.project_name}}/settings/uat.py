@@ -7,6 +7,8 @@ INSTALLED_APPS += (
     'raven.contrib.django.raven_compat',
 )
 
+CSRF_COOKIE_SECURE = False # Override CSRF to work also with http
+
 
 try:
     from .local import *
