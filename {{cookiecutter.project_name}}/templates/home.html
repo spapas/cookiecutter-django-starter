@@ -60,7 +60,13 @@
             <h2>Επιλογές</h2>
             {% if user.is_authenticated %}
                 <h4>Καλώς ήρθατε, {{ user }}</h4>
-
+                {% if  perms.core.admin %}
+                    Πρόσβαση διαχειριστή
+                {% elif perms.core.user %}
+                    Πρόσβαση χρήστη
+                {% else %}
+                    Καμία πρόσβαση
+                {% endif %}
 
             {% else %}
                 <a class='btn btn-primary' href='{% url "auth_login" %}'>Σύνδεση</a>
