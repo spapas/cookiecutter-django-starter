@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'compressor',
+    'crispy_forms',
     'django_tables2',
     'django_filters',
     'django_extensions',
@@ -144,6 +145,9 @@ SERVER_EMAIL = 'noreply@hcg.gr'
 EMAIL_HOST_PASSWORD = '' # Configure me in local.py
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'noreply@hcg.gr'
+
+# crispy forms template pack
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 from .ldap_conf import *
 AUTHENTICATION_BACKENDS = (
