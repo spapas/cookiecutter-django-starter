@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'reversion.middleware.RevisionMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
