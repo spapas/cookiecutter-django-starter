@@ -8,6 +8,11 @@ INSTALLED_APPS += (
     'raven.contrib.django.raven_compat',
 )
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
 
 
 try:
