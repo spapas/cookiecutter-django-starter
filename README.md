@@ -14,6 +14,7 @@ mkdir parent_folder
 cd parent_folder
 virtualenv venv
 cookiecutter https://github.com/spapas/cookiecutter-django-starter
+
 ```
 
 Now answer the questions - the most important is the project name.
