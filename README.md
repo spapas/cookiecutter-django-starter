@@ -36,7 +36,8 @@ I have some scripts to help me on Windows - but should work anywhere. The script
 * test.bat to run the test suite
 
 
-Usage:
+Usage
+-----
 
 Install cookiecutter (https://github.com/audreyr/cookiecutter) to your global python packages
 (or the virtualenv you are going to create). Then,
