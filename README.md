@@ -40,12 +40,12 @@ Usage
 -----
 
 Install cookiecutter (https://github.com/audreyr/cookiecutter) to your global python packages
-(or the virtualenv you are going to create). Then,
+(or the virtualenv you are going to create -- also checkout my post @ https://spapas.github.io/2017/12/20/python-2-3-windows/ for using python 2 and 3 on windows). Then,
 
 ```
 mkdir parent_folder
 cd parent_folder
-virtualenv venv
+py -3 -m venv venv 
 cookiecutter https://github.com/spapas/cookiecutter-django-starter
 
 ```
@@ -56,10 +56,11 @@ Now answer the questions - the most important is the project name (i.e project n
 cd project_name
 dovenv.bat
 pip install -r requirements\dev.txt
-
 ```
 
-Project is ready - from the same directory (where you run ``dovenv.bat``) run the following to also create your git repo:
+If you see ldap-related errors then install correct version of python-ldap from https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-ldap (download it and run ``pip install python_ldap-xxx.whl``) - then run again ``pip install -r requrements\dev.txt).
+
+Project is ready - from the same directory (where you run ``dovenv.bat``) run the following to also create your git repo (a proper .gitignore is alreadt provided courtesy of https://gitignore.io and some additions of mine):
 
 ```
 git init
@@ -68,6 +69,15 @@ git commit
 git remote add origin http://...
 git push origin master
 ```
+
+Now you can run the migrations, create your superuser and run the dev server:
+
+```
+dj migrate
+dj createsuperuser
+rsp
+```
+
 
 
 Please notice that this project has been configured for usage in Greece. If you want to 
