@@ -28,7 +28,7 @@ AUTHENTICATION_BACKENDS += (
 
 CSRF_COOKIE_SECURE = False # Override CSRF to work also with http
 SESSION_COOKIE_SECURE = False # Override session to work also with http
-
+INTERNAL_IPS = ['127.0.0.1']
 MIDDLEWARE += [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]               
