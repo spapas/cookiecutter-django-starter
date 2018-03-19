@@ -3,7 +3,6 @@ Simple Django cookiecutter
 
 *Warning: Upgraded to Django 2.x - for python 3 only!*
 
-
 This cookiecutter has LDAP authentication configured - if you don't want it you need to remove the lines
 
 ```
@@ -68,3 +67,10 @@ git commit
 git remote add origin http://...
 git push origin master
 ```
+
+
+Please notice that this project has been configured for usage in Greece. If you want to 
+convert it to your language you should probably change the ``LANGUAGE_CODE`` and ``TIMEZONE`` in
+settings.py and make some small changes to the templates.
+
+
