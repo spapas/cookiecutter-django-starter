@@ -3,7 +3,7 @@ Django settings for {{ cookiecutter.project_name }} project.
 """
 
 import os
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -36,13 +36,12 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'reversion.middleware.RevisionMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'reversion.middleware.RevisionMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]

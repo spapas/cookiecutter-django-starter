@@ -29,6 +29,9 @@ AUTHENTICATION_BACKENDS += (
 CSRF_COOKIE_SECURE = False # Override CSRF to work also with http
 SESSION_COOKIE_SECURE = False # Override session to work also with http
 
+MIDDLEWARE += [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]               
 try:
     from .local import *
 except ImportError:
