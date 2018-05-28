@@ -2,6 +2,11 @@ from __future__ import with_statement
 from fabric.api import *
 import os
 
+def black():
+    "Run black"
+    print("Running black...")
+    local("black .")
+    print("Black ok!")
 
 def pep8():
     "Do pep8 style checks"
@@ -45,7 +50,8 @@ def touch_wsgi():
 
 
 def full_deploy():
-    "Commit - pull - do work - and restart uwsgi"
+    "Reformat - check - commit - pull - do work - and restart uwsgi"
+    black()
     pep8()
     commit()
     pull()
