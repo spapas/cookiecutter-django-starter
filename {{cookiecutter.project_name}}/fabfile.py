@@ -3,7 +3,7 @@ from fabric.api import *
 import os
 
 def pep8():
-    "Do pep8 styule checks"
+    "Do pep8 style checks"
     print "Check with pep8"
     local('pep8 --max-line-length=160 --filename=*.py {{cookiecutter.project_name}} --exclude migrations')
     print "pep8 ok!"
