@@ -8,13 +8,13 @@ def black():
     local("black .")
     print("Black ok!")
 
-def pep8():
-    "Do pep8 style checks"
-    print("Check with pep8")
+def flake8():
+    "Run flake8 checks"
+    print("Check with flake8")
     local(
-        "pep8 --max-line-length=160 --filename=*.py {{cookiecutter.project_name}} --exclude migrations"
+        "flake8 ."
     )
-    print("pep8 ok!")
+    print("flake8 ok!")
 
 
 def commit():
@@ -52,7 +52,7 @@ def touch_wsgi():
 def full_deploy():
     "Reformat - check - commit - pull - do work - and restart uwsgi"
     black()
-    pep8()
+    flake8()
     commit()
     pull()
     work()
