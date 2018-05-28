@@ -5,7 +5,7 @@
 from .dev import *
 
 ########## TEST SETTINGS
-#TEST_RUNNER = "discover_runner.DiscoverRunner"
+# TEST_RUNNER = "discover_runner.DiscoverRunner"
 TEST_DISCOVER_TOP_LEVEL = BASE_DIR
 TEST_DISCOVER_ROOT = BASE_DIR
 TEST_DISCOVER_PATTERN = "test_*"
@@ -19,8 +19,7 @@ DATABASES = {
         "PASSWORD": "",
         "HOST": "",
         "PORT": "",
-    },
+    }
 }
 
-SECRET_KEY='1'
-
+SECRET_KEY = "1"
