@@ -1,6 +1,7 @@
 from __future__ import with_statement
-from fabric.api import *
+from fabric.api import env, cd, run, local, settings
 import os
+
 
 def black():
     "Run black"
@@ -8,12 +9,11 @@ def black():
     local("black .")
     print("Black ok!")
 
+
 def flake8():
     "Run flake8 checks"
     print("Check with flake8")
-    local(
-        "flake8 ."
-    )
+    local("flake8 .")
     print("flake8 ok!")
 
 
