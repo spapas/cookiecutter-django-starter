@@ -40,12 +40,13 @@ Usage
 -----
 
 Install cookiecutter (https://github.com/audreyr/cookiecutter) to your global python packages
-(or the virtualenv you are going to create -- also checkout my post @ https://spapas.github.io/2017/12/20/python-2-3-windows/ for using python 2 and 3 on windows). Then,
+(or the virtualenv you are going to create -- also checkout my post @ https://spapas.github.io/2017/12/20/python-2-3-windows/ for using python 2 and 3 on windows). Then, activate your venv and run cookiecutter with this repo, i.e
 
 ```
 mkdir parent_folder
 cd parent_folder
 py -3 -m venv venv 
+pip install cookiecutter
 cookiecutter https://github.com/spapas/cookiecutter-django-starter
 
 ```
@@ -58,7 +59,7 @@ dovenv.bat
 pip install -r requirements\dev.txt
 ```
 
-If you see ldap-related errors then install correct version of python-ldap from https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-ldap (download it and run ``pip install python_ldap-xxx.whl``) - then run again ``pip install -r requrements\dev.txt).
+If you see ldap-related errors then install correct version of python-ldap from https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-ldap (download it and run ``pip install python_ldap-xxx.whl``) - then run again ``pip install -r requrements\dev.txt``).
 
 Project is ready - from the same directory (where you run ``dovenv.bat``) run the following to also create your git repo (a proper .gitignore is alreadt provided courtesy of https://gitignore.io and some additions of mine):
 
