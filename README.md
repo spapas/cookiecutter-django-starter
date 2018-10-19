@@ -40,12 +40,13 @@ Usage
 -----
 
 Install cookiecutter (https://github.com/audreyr/cookiecutter) to your global python packages
-(or the virtualenv you are going to create -- also checkout my post @ https://spapas.github.io/2017/12/20/python-2-3-windows/ for using python 2 and 3 on windows). Then,
+(or the virtualenv you are going to create -- also checkout my post @ https://spapas.github.io/2017/12/20/python-2-3-windows/ for using python 2 and 3 on windows). Then, activate your venv and run cookiecutter with this repo, i.e
 
 ```
 mkdir parent_folder
 cd parent_folder
 py -3 -m venv venv 
+pip install cookiecutter
 cookiecutter https://github.com/spapas/cookiecutter-django-starter
 
 ```
