@@ -27,6 +27,7 @@ Other things that are used (and configured except the LDAP auth):
 * django-compressor to combine and compress your static assets
 * django-extensions to enable some useful functionality
 * Werkzeug to run the dev server
+* Custom User model
 
 I have some scripts to help me on Windows - but should work anywhere. The scripts are:
 
