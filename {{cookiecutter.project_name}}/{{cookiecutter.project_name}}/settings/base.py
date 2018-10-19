@@ -14,9 +14,10 @@ SITE_ID = 3
 
 ALLOWED_HOSTS = []
 
-
 INSTALLED_APPS = [
     "{{cookiecutter.project_name}}.core",
+    "{{cookiecutter.project_name}}.users",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -80,6 +81,8 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'users.User'
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
@@ -88,6 +91,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
+
+LOGIN_REDIRECT_URL = reverse_lazy("home")
+LOGIN_URL = "/login/"
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 LANGUAGE_CODE = "el"
 TIME_ZONE = "Europe/Athens"
@@ -100,11 +107,6 @@ STATIC_URL = "/static_{{cookiecutter.project_name}}/"
 MEDIA_URL = "/media_{{cookiecutter.project_name}}/"
 MEDIA_ROOT = "/home/serafeim/{{cookiecutter.project_name}}/media"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-
-
-LOGIN_REDIRECT_URL = reverse_lazy("home")
-LOGIN_URL = "/login/"
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 CACHES = {
     "default": {
