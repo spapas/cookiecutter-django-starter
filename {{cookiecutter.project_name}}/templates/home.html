@@ -52,28 +52,28 @@
 
     <div class="row">
         <div class="col-sm-8">
-            <h2>Πληροφορίες</h2>
+            <h2>Information</h2>
             <br />
-            <h3>
+            <h3></h3>
         </div>
         <div class="col-sm-4">
             <h2>Επιλογές</h2>
             {% if user.is_authenticated %}
-                <h4>Καλώς ήρθατε, {{ user }}</h4>
+                <h4>Welcome, {{ user }}</h4>
                 {% if  perms.core.admin %}
-                    Πρόσβαση διαχειριστή
+                    Admin access
                 {% elif perms.core.user %}
-                    Πρόσβαση χρήστη
+                    User access
                 {% else %}
-                    Καμία πρόσβαση
+                    No access
                 {% endif %}
 
             {% else %}
-                <a class='btn btn-primary' href='{% url "auth_login" %}'>Σύνδεση</a>
+                <a class='btn btn-primary' href='{% url "auth_login" %}'>Login</a>
             {% endif %}
 
 
-            <h4>Επικοινωνία</h4>
+            <h4>Communication</h4>
             
         </div>
     </div>
