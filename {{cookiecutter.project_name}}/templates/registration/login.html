@@ -1,7 +1,7 @@
 ﻿{% extends "site_base.html" %}
 {% load widget_tweaks %}
 
-{% block head_title %}Loginη{% endblock %}
+{% block head_title %}Login{% endblock %}
 {% block page_title %}Login{% endblock %}
 {% block page_content %}
 {% if form.errors %}
@@ -13,7 +13,7 @@
 <form class='login' method="post" action="">
   {% csrf_token %}
   <div class='form-group'>
-    <label class='control-label'>Username</label>
+    <label class='control-label'>{{ form.username.label_tag }}</label>
     {{ form.username|add_class:"form-control" }}
   </div>
 
