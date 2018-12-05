@@ -28,6 +28,7 @@ Other things that are used (and configured except the LDAP auth):
 * django-extensions to enable some useful functionality
 * Werkzeug to run the dev server
 * Custom User model with login/logout pages
+* Bootstrap 4 templates
 
 I have some scripts to help me on Windows - but should work anywhere. The scripts are:
 
