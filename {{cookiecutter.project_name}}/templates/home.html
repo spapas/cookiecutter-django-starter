@@ -3,95 +3,58 @@
 {% load static %}
 {% block extra_style %}
 <style>
-    .business-header {
-        height: 280px;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
-        background: #1e5799; /* Old browsers */
-        background: -moz-linear-gradient(top,  #4285f4 0%, #7db9e8 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4285f4), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(top,  #4285f4 0%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(top,  #4285f4 0%,#7db9e8 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(top,  #4285f4 0%,#7db9e8 100%); /* IE10+ */
-        background: linear-gradient(to bottom,  #4285f4 0%,#7db9e8 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4285f4', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-        color: #eaeaea;
-        text-shadow: 4px 4px #1e5799;
-    }
-
-    .business-header h1, .business-header h3  {
-        font-family: 'Open Sans Condensed', 'Helvetica Neue', Helvetica,Arial,sans-serif;
-    }
-
-    .navbar {
-        margin-bottom: 0px;
-    }
 
 </style>
 {% endblock %}
-{% block head_title %}Καλώς ήρθατε{% endblock %}
+{% block head_title %}Welcome{% endblock %}
 {% block body_class %}home{% endblock %}
 
-
 {% block body_base %}
-<header class="business-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="tagline">main title</h1>
-                <h3>subtitle</h3>
-            </div>
-        </div>
-    </div>
-</header>
-
-<div class="container">
+  <main role="main">
     {% include "_messages.html" %}
-
-    <div class="row">
-        <div class="col-sm-8">
-            <h2>Information</h2>
-            <br />
-            <h3></h3>
-        </div>
-        <div class="col-sm-4">
-            <h2>Επιλογές</h2>
-            {% if user.is_authenticated %}
-                <h4>Welcome, {{ user }}</h4>
-                {% if  perms.core.admin %}
-                    Admin access
-                {% elif perms.core.user %}
-                    User access
-                {% else %}
-                    No access
-                {% endif %}
-
-            {% else %}
-                <a class='btn btn-primary' href='{% url "auth_login" %}'>Login</a>
-            {% endif %}
-
-
-            <h4>Communication</h4>
-            
-        </div>
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Sample</h1>
+        <h3 class="display-5">Sample template!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
     </div>
 
-
-</div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Options</h2>
+          {% if user.is_authenticated %}
+              <h4>Welcome, {{ user }}</h4>
+              {% if perms.core.admin %}
+                  Admin access
+                  <a class="btn btn-primary" href="" role="button">Continue</a></p>
+              {% elif perms.core.user %}
+                  User access
+              {% else %}
+                  No access
+              {% endif %}
+          {% else %}
+            <p>
+            Please login to use this site!
+            <br />
+            <a class="btn btn-primary" href="{% url "auth_login" %}" role="button">Log in</a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div> <!-- /container -->
+  </main>
 {% endblock %}
-
-{% block extra_script %}
-<script src='{% static "jquery.fittext.min.js" %}'></script>
-<script>
-$(function() {
-    $('.business-header h1').fitText(1.6, { minFontSize: '20px'});
-    $('.business-header h3').fitText(2.7);
-});
-</script>
-
-{% endblock %}
-
-
 
