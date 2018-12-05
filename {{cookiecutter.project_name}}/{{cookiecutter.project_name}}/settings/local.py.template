@@ -1,15 +1,11 @@
 # Override settings - this is not to be included in the version control
-
+import os
+from .base import *
 SECRET_KEY = 'overrideme1298{{cookiecutter.project_name}}031892jklaksdiasdlkajsdlkasj{{cookiecutter.project_name}}dlkdfgdfg'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '{{cookiecutter.project_name}}',
-        'USER': '{{cookiecutter.project_name}}',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-        'ATOMIC_REQUESTS': True,
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
