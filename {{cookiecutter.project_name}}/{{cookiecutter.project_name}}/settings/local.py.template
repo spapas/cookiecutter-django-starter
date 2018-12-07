@@ -1,6 +1,6 @@
 # Override settings - this is not to be included in the version control
 import os
-from .base import *
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SECRET_KEY = 'overrideme1298{{cookiecutter.project_name}}031892jklaksdiasdlkajsdlkasj{{cookiecutter.project_name}}dlkdfgdfg'
 
 DATABASES = {
