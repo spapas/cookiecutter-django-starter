@@ -63,6 +63,8 @@ pip install -r requirements\dev.txt
 
 If you see ldap-related errors then install correct version of python-ldap from https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-ldap (download it and run ``pip install python_ldap-xxx.whl``) - then run again ``pip install -r requrements\dev.txt``).
 
+If you see rcssmin related errors then install it like this: ``pip install -U rcssmin --install-option="--without-c-extensions"``
+
 Project is ready - from the same directory (where you run ``dovenv.bat``) run the following to also create your git repo (a proper .gitignore is alreadt provided courtesy of https://gitignore.io and some additions of mine):
 
 ```
