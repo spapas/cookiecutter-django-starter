@@ -90,3 +90,16 @@ convert it to your language you should probably change the ``LANGUAGE_CODE`` and
 settings.py and make some small changes to the templates.
 
 
+### The fabric situation
+
+Please notice that I've included a fabric 1.x script for e-z deploy. For reasons that I don't want to explain here I won't support fabric 2.x so you'll need to use your python 2.7.x installation. How to do it? First of all install fabric 1.x using something like
+
+```
+py -2 -m pip install fabric==1.14.1
+```
+
+and then just run it to deploy to uat like
+
+```
+py -2 -m fab uat full_deploy
+```
