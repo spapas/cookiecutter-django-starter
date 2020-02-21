@@ -101,5 +101,5 @@ py -2 -m pip install fabric==1.14.1
 and then just run it to deploy to uat like
 
 ```
-py -2 -m fab uat full_deploy
+py -2 -m fabric uat full_deploy
 ```
