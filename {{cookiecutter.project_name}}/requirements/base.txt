@@ -1,4 +1,4 @@
-Django==3.0.3
+Django==3.0.7
 Werkzeug==0.16.1
 django-auth-ldap==2.1.0
 django-compressor==2.4
