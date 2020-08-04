@@ -10,14 +10,14 @@
   {{ form.non_field_errors }}
 </div>
 {% endif %}
-<form class='login' method="post" action="">
+<form class='login' method="post" action="" >
   {% csrf_token %}
-  <div class='form-group'>
+  <div class="mb-3 mt-3">
     <label class='control-label'>{{ form.username.label_tag }}</label>
     {{ form.username|add_class:"form-control" }}
   </div>
 
-  <div class='form-group'>
+  <div class="mb-3">
     <label class='control-label'>{{ form.password.label_tag }}</label>
     {{ form.password|add_class:"form-control" }}
   </div>

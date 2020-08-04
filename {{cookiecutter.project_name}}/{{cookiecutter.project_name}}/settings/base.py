@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "compressor",
     "crispy_forms",
     "django_tables2",
+    "django_tables2_column_shifter",
     "django_filters",
     "django_extensions",
     "reversion",
