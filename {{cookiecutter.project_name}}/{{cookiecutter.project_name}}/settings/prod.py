@@ -6,7 +6,15 @@ SITE_ID = 1
 COMPRESS_OFFLINE = True
 
 
-INSTALLED_APPS += ("raven.contrib.django.raven_compat",)
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://189de8f688854c26958ae3b56c640147@sentry.hcg.gr/37",
+    integrations=[DjangoIntegration()],
+)
+
 
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",

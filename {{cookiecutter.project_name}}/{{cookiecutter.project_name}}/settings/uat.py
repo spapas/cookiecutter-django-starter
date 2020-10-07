@@ -3,7 +3,15 @@ from .base import *
 DEBUG = True
 SITE_ID = 2
 
-INSTALLED_APPS += ("raven.contrib.django.raven_compat",)
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="",
+    integrations=[DjangoIntegration()],
+)
+
 
 CSRF_COOKIE_SECURE = False  # Override CSRF to work also with http
 SESSION_COOKIE_SECURE = False  # Override session to work also with http
