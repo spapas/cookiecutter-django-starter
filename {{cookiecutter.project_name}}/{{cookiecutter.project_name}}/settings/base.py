@@ -108,6 +108,7 @@ STATIC_URL = "/static_{{cookiecutter.project_name}}/"
 MEDIA_URL = "/media_{{cookiecutter.project_name}}/"
 MEDIA_ROOT = "/home/serafeim/{{cookiecutter.project_name}}/media"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 CACHES = {
     "default": {
