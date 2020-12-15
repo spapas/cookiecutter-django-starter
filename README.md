@@ -28,7 +28,7 @@ Other things that are used (and configured except the LDAP auth):
 * django-extensions to enable some useful functionality
 * Werkzeug to run the dev server
 * Custom User model with login/logout pages
-* Bootstrap 4 templates
+* Bootstrap 5 templates
 
 I have some scripts to help me on Windows - but should work anywhere. The scripts are:
 
@@ -82,8 +82,6 @@ dj migrate
 dj createsuperuser
 rsp
 ```
-
-
 
 Please notice that this project has been configured for usage in Greece. If you want to 
 convert it to your language you should probably change the ``LANGUAGE_CODE`` and ``TIMEZONE`` in
