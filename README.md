@@ -92,14 +92,6 @@ settings.py and make some small changes to the templates.
 
 ### The fabric situation
 
-Please notice that I've included a fabric 1.x script for e-z deploy. For reasons that I don't want to explain here I won't support fabric 2.x so you'll need to use your python 2.7.x installation. How to do it? First of all install fabric 1.x using something like
+Please notice that I've included a fabric 1.x script for e-z deploy. For reasons that I don't want to explain here I won't support fabric 2.x. To use that fabric script you'll need to use the life saving fab-classic project (https://ploxiln.github.io/fab-classic/) that is a fork of fabric 1.x properly supporting ypthon 3.x! This dependency is already installed with the requirements/dev.txt.
 
-```
-py -2 -m pip install fabric==1.14.1
-```
 
-and then just run it to deploy to uat like
-
-```
-py -2 -m fabric uat full_deploy
-```
