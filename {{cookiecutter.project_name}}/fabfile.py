@@ -42,11 +42,13 @@ def work():
         virtualenv("python manage.py migrate")
         virtualenv("python manage.py update_permissions")
         virtualenv("python manage.py collectstatic --noinput")
-
+        if env.env == "prod":
+            virtualenv("python manage.py compres")
 
 def touch_wsgi():
     print("Restarting uwsgi")
-    run("uwsgi --reload /tmp/{{cookiecutter.project_name}}.pid")
+    if env.env == "prod":
+        run(r"cat /home/serafeim/aismanager/gunicorn.pid | xargs kill -HUP")
 
 
 def full_deploy():
