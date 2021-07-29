@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "compressor",
     "crispy_forms",
+    "crispy_bootstrap5",    
     "django_tables2",
     "django_tables2_column_shifter",
     "django_filters",
