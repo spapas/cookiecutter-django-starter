@@ -29,6 +29,8 @@ Other things that are used (and configured except the LDAP auth):
 * Werkzeug to run the dev server
 * Custom User model with login/logout pages
 * Bootstrap 5 templates
+* Usage of thread locals to retrieve request (and user)
+* An abstract model that saves created/modified datetime and user.
 
 I have some scripts to help me on Windows - but should work anywhere. The scripts are:
 
@@ -92,4 +94,6 @@ settings.py and make some small changes to the templates.
 
 Please notice that I've included a fabric 1.x script for e-z deploy. For reasons that I don't want to explain here I won't support fabric 2.x. To use that fabric script you'll need to use the life saving fab-classic project (https://ploxiln.github.io/fab-classic/) that is a fork of fabric 1.x properly supporting ypthon 3.x! This dependency is already installed with the requirements/dev.txt.
 
+### Removing LDAP
 
+If you don't want to use LDAP remove the ldap-related requirements from requirements/base.txt, remove the ldap_conf.py file from settings, remove the line importing ldap_conf from settings/base.py and either change your AUTHENTICATION_BACKEDS to your liking or completely remove that line from base.py and dev.py to fallback to model authentication.
