@@ -1,6 +1,6 @@
 -r base.txt
 
 django-debug-toolbar==3.2.2
-fab-classic==1.18.1
+fab-classic==1.19.1
 black==21.9b0
 pylint==2.11.1
