@@ -1,8 +1,6 @@
 Simple Django cookiecutter
 ==========================
 
-*Warning: Upgraded to Django 3.x - for python 3 only!*
-
 This cookiecutter has LDAP authentication configured - if you don't want it you need to remove the lines
 
 ```
