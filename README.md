@@ -29,7 +29,8 @@ Other things that are used (and configured except the LDAP auth):
 * Bootstrap 5 templates
 * Usage of thread locals to retrieve request (and user)
 * An abstract model that saves created/modified datetime and user.
-
+* Upgraded to Django 5.1 and all latest packages
+* 
 I have some scripts to help me on Windows - but should work anywhere. The scripts are:
 
 * dovenv.bat to enable the virtualenv and correctly set the settings (to the dev env ones)
