@@ -9,6 +9,7 @@ from django.contrib import admin
 urlpatterns = [
     path("", include("{{cookiecutter.project_name}}.core.urls")),
     path("users/", include("{{cookiecutter.project_name}}.users.urls")),
+    path("hijack/", include("hijack.urls")),
     path("admin/", admin.site.urls),
 ]
 
