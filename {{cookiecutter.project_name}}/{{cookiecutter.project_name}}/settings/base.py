@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "django_tables2_column_shifter",
     "django_filters",
     "django_extensions",
+    "hijack",
     "reversion",
     "widget_tweaks",
 ]
@@ -46,6 +47,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django_tools.middlewares.ThreadLocal.ThreadLocalMiddleware",
+    "hijack.middleware.HijackUserMiddleware",
 ]
 
 ROOT_URLCONF = "{{cookiecutter.project_name}}.urls"
