@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView
+from .views import HijackFormView
+
 
 urlpatterns = [
     path(r"", TemplateView.as_view(template_name="home.html"), name="home"),
