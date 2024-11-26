@@ -13,6 +13,10 @@ class UserTable(ColumnShiftTableBootstrap5):
     #    attrs={"a": {"class": "btn btn-primary btn-sm"}},
     #)
 
+    id = tables.TemplateColumn("""
+        <a href="{% url 'hijack-action' %}?username={{ record.username }}" class="btn btn-danger btn-sm">{{ record.id }}</a>
+    """, verbose_name="Hijack")
+
     
     class Meta:
         model = models.User
