@@ -2,6 +2,7 @@ from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView
 from .views import HijackFormView
+from django.contrib.auth.decorators import user_passes_test
 
 
 urlpatterns = [
