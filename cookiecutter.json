@@ -5,6 +5,7 @@
     "ldap_server": "ldap://login1.company.gr",
     "ldap_user_dn": "ou=People,dc=company,dc=gr",
     "_copy_without_render": [
-        "*.html"
+        "*.html",
+        "{{cookiecutter.project_name}}/users/tables.py"
     ]
 }
