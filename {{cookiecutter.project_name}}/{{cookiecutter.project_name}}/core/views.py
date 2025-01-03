@@ -2,8 +2,8 @@ from django.views.generic import FormView
 from typing import Any
 from django import forms
 from django.contrib.auth import get_user_model
-+
-+
+
+
 class HijackForm(forms.Form):
     username = forms.CharField()
 
