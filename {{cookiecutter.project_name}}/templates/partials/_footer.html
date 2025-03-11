@@ -4,6 +4,18 @@
     <div class="col-md-12">
       <div class='alert alert-danger pb-1'>
         <h4>TEST VERSION</h4>
+        <h6>
+          View:
+          <a href='vscode://file/{% get_view_file view %}'>{{ view }}</a>
+          <br />
+          Template: <a href='vscode://file/{% get_template_file view %}'>{{ view.template_name|default:view.get_template_names|join:"" }}</a>
+          <br />
+          {% other_context_vars as ocvs %}
+
+          {% for ocv in ocvs.items %}
+            {{ ocv.0 }}: {{ ocv.1 }} {% if not forloop.last %}●{% endif %}
+          {% endfor %}
+        </h6>
       </div>
     </div>
   </div>
