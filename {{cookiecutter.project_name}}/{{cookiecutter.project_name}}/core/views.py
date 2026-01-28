@@ -1,20 +1,37 @@
-from django.views.generic import FormView
-from typing import Any
-from django import forms
 from django.contrib.auth import get_user_model
+from django.http import HttpResponse
 
 
-class HijackForm(forms.Form):
-    username = forms.CharField()
+def hijack_form(request):
+    return HttpResponse(
+        """
+        <form action="/hijack-action/" method="GET">
+            <input name='username'>
+            <button type="submit">Start hijacking</button>
+        </form>
+    """
+    )
 
 
-class HijackFormView(FormView):
-    template_name = "hijack.html"
-    form_class = HijackForm
+def hijack_action(request):
+    from django.middleware.csrf import get_token
 
-    def get_context_data(self, **kwargs):
-        User = get_user_model()
-        ctx = super().get_context_data(**kwargs)
+    username = request.GET.get("username")
+    try:
+        user = get_user_model().objects.get(username=username)
+    except get_user_model().DoesNotExist:
+        return HttpResponse(f"User {username} not found", status=404)
+    return HttpResponse(
+        """
+        <form action="/hijack/acquire/" method="post">
+            <input type='text' value='{0}' name='user_pk'>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{1}">
+            <button type="submit">Hijack {2}</button>
+        </form>
+    """.format(
+            user.pk,
+            get_token(request),
+            user.username,
+        )
+    )
 
-        ctx["user"] = User.objects.get(username=self.request.GET.get("username"))
-        return ctx
