@@ -1,6 +1,6 @@
 -r base.txt
 
-gunicorn==23.0.0
+gunicorn==24.1.1
 pymemcache==4.0.0
 
 sentry_sdk==2.13.0
